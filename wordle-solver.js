@@ -13,9 +13,7 @@ let solve = () => {
                 return include.every(letter => letter === '*'? true : word.includes(letter))
                 && exclude.every(letter => !word.includes(letter))
                 && letters.every(item => {
-                    if (item.letter !== '*')
-                        return word.charAt(item.index) === item.letter;
-                    return true; 
+                    return item.letter !== '*' ? word.charAt(item.index) === item.letter : true;
                 });
         });
     return solutions;
